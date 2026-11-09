@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "ALADIN Plasma Cosmology"
+authors:
+  - family-names: Bucurenciu
+    given-names: Mihai Alexandru
+    orcid: "https://orcid.org/0009-0006-4457-557X"
+    alias: Aladin
+repository-code: "https://github.com/aladinibz/Aladin-Plasma-Cosmology"
+url: "https://github.com/aladinibz/Aladin-Plasma-Cosmology"
+license: MIT
+version: 2.1
+date-released: 2026-11-09
+keywords:
+  - plasma
+  - MHD
+  - cosmology
+  - Z-pinch
+  - cylindrical
+  - GPU
+  - CuPy
+  - ALADIN
+abstract: >-
+  High-performance explicit cylindrical MHD / QMHD driver for plasma cosmology.
+  Features staggered constrained transport, production UCT+Hall EMF kernels,
+  cylindrical HLLD solvers, G₂ entropy geometry, and gyrotropic kinetic closures.
