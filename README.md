@@ -8,7 +8,12 @@
 ![Python](https://img.shields.io/badge/Python-3.x-blue.svg)
 ![CUDA / CuPy](https://img.shields.io/badge/CUDA-CuPy%20RawKernel-76B900.svg)
 [![ORCID](https://img.shields.io/badge/ORCID-0009--0006--4457--557X-A6CE39.svg)](https://orcid.org/0009-0006-4457-557X)
-![Open Science](https://img.shields.io/badge/Open%20Science-ByteWise%20%C2%B7%20ByByte-0A7E8C.svg)
+[![Open Science by Design](https://img.shields.io/badge/ALADIN-Open%20Science%20by%20Design-0A7E8C.svg)](#open-science-bytewise--bybyte)
+[![MMS](https://img.shields.io/badge/MMS-Mathematical%20verification-1F5F8B.svg)](https://zenodo.org/records/24498958)
+[![ByteWise](https://img.shields.io/badge/ByteWise-Scientific%20integrity-3F8F5A.svg)](#open-science-bytewise--bybyte)
+[![ByByte](https://img.shields.io/badge/ByByte-Numerical%20reproducibility-7A4F9A.svg)](#open-science-bytewise--bybyte)
+[![MakeReport](https://img.shields.io/badge/MakeReport-Evidence%20transparency-C0603A.svg)](#open-science-bytewise--bybyte)
+[![Bundle](https://img.shields.io/badge/Bundle-SHA--256%20sealed-5B6475.svg)](#open-science-bytewise--bybyte)
 [![Command Center](https://img.shields.io/badge/Command%20Center-Hugging%20Face-blueviolet.svg)](https://huggingface.co/spaces/aladinibz/PlasmaCosmology)
 
 [Overview](#overview) · [Z-pinch](#the-z-pinch) · [Z-pinch benchmark](#native-cylindrical-z-pinch--benchmark-status) · [J × B](#the-j--b-force) · [History](#historical-foundations) · [Driver](#aladin-native-cylindrical-mhd-driver) · [Results](#quantitative-results) · [Kernels](#the-eleven-kernels--purpose-and-archival-references) · [Verification](#verification) · [Open Science](#open-science-bytewise--bybyte) · [Programs](#research-programs) · [Lab](#the-aladin-lab)
