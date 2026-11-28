@@ -1,0 +1,39 @@
+TITLE
+ALADIN UCT-CURL v1.6 — third-order axis current for odd azimuthal modes, found with exact Bessel benchmarks (AXIS-01 / AXJ-01, CURL-08)
+
+VERSION
+v1.6   (publish as a NEW VERSION of the UCT-CURL v1.5 record, 10.5281/zenodo.24465267)
+
+DESCRIPTION
+ALADIN UCT-CURL v1.6 is kernel 09 of the ALADIN Driver, a native-cylindrical GPU/CPU magnetohydrodynamics solver (FP64, bit-identical GPU = CPU). It reconstructs the current density J = curl B for the resistive and Hall terms, including on the axis r = 0.
+
+What was built and verified:
+• AXJ-01, a new benchmark set for the current at the axis: nine exact fields A_z = f(r) cos(m φ) — power laws (B_φ = r³, r⁵), sin kr, the Bessel pair B_φ = J₁(kr) → J_z = k J₀(kr), and the Bessel eigenmodes A_z = J_m(kr) cos(m φ) for m = 1…4, which carry the exact axis regularity of every azimuthal mode. Criteria were hashed before the run.
+• On UCT-CURL v1.5 it FAILED for the odd modes: the current in the ring touching the axis converged at first order for m = 1 (the kink) and m = 3 (orders 1.02, 1.05); m = 0, 2, 4 were second order. The FAIL is kept in the record.
+• Cause: at the axis the kernel rotates B into Cartesian components; B_φ is a radial average on its face (what constrained transport carries) while B_r is a point value in r. The O(dr²) mismatch was divided by r dφ — first order wherever ∂²B_φ/∂r² ≠ 0 at the axis, i.e. odd m.
+• v1.6 converts B_φ to its point value before the rotation (three lines, the radial twin of the v1.5 fix). The axis-ring current is now third order for m = 1 and m = 3 (error at 128 × 256: 3.1e-2 → 2.0e-4 for m = 1); every test passes.
+• CURL-08 certifies v1.6: 11/11 checks PASS. The README Z-pinch and every annulus grid are bit-identical to v1.5; the CURL-07 benchmarks (uniform field through the axis, Beltrami field, resistive decay) are unchanged; all 93 arrays are identical on GPU (NVIDIA L4) and CPU to the last bit.
+
+Disclosed in the report: the AXJ-01 grids were run on a scratch prototype (arithmetic identical to v1.6) before CURL-08 was frozen, so its AXJ check is a confirmation, not a blind test; one threshold (README pinch) was relaxed to round-off before the run and measured bit-identical anyway.
+
+Files:
+• ALADIN_UCT_CURL_v16_Report.pdf — the certification report (5 pages)
+• ALADIN_UCT_CURL_v16_code.tar.gz — the Driver tree with UCT-CURL v1.6 (and the v1.5 and v1.4 references), the campaign scripts axj01.py, curl08.py, curl08_colab.py, frozen-threshold hashes
+• ALADIN_UCT_CURL_v16_evidence.tar.gz — the AXJ-01 run on v1.5 (FAIL), the CURL-08 CPU bundle and log, the CPU state hashes, and the CURL-08 GPU bundle (CURL08_gpu.tar.gz)
+• SHA256SUMS.txt — checksums of all files
+
+Verify: sha256sum -c SHA256SUMS.txt ; inside each bundle: sha256sum -c SHA256SUMS
+
+Open Science · ByteWise · ByByte: every verdict sits in a checksummed bundle; FAILs are kept.
+
+Author: Mihai Alexandru Bucurenciu (ALADIN), ORCID 0009-0006-4457-557X
+AI assistant Team: SuperGrok, Claude, ChatGPT
+
+KEYWORDS
+magnetohydrodynamics; MHD; cylindrical coordinates; coordinate axis; current density; Bessel functions; azimuthal modes; kink mode; Z-pinch; Hall MHD; resistive MHD; code verification; GPU; CUDA; reproducibility; bit-identical; plasma physics; ALADIN
+
+RESOURCE TYPE
+Software
+
+LICENSE
+(the same license as the UCT-CURL v1.5 record)
